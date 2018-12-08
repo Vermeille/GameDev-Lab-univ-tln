@@ -7,20 +7,21 @@ from random import uniform, gauss
 gl.init_window('Win', 800, 600, 'sky blue')
 
 def vec(x, y):
-    return SimpleNamespace(x=x, y=y)
+    v = SimpleNamespace()
+    v.x = x
+    v.y = y
+    return v
 
 def vec_add(u, v):
     return vec(u.x + v.x, u.y + v.y)
 
 def particle():
-    p = vec(400 + uniform(-25, 25), 30 + uniform(-20, 20))
-    s = vec(gauss(0, 5), uniform(-1, 5))
-    dur = uniform(0, 1.5)
-    return SimpleNamespace(
-            pos=p,
-            speed=s,
-            duration=dur,
-            lifetime=0)
+    particle = SimpleNamespace()
+    particle.pos = vec(400 + uniform(-25, 25), 30 + uniform(-20, 20))
+    particle.speed = vec(gauss(0, 5), uniform(-1, 5))
+    particle.duration = uniform(0, 1.5)
+    particle.lifetime = 0
+    return particle
 
 def particle_update(p, wind_force):
     p.lifetime += 1/60
