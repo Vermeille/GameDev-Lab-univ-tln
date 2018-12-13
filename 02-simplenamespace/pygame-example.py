@@ -12,6 +12,9 @@ while True:
     screen.fill((0, 0, 0))
 
     pygame.event.pump()
+    if pygame.event.peek(pygame.QUIT):
+        break
+
     keys = pygame.key.get_pressed()
     if keys[pygame.K_SPACE]:
         x += 3
