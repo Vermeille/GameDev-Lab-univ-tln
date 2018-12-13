@@ -31,8 +31,3 @@ def vec_sqlen(u):
 def vec_len(u):
     return vec_sqlen(u) ** 0.5
 
-
-a = vec(3, 4)
-b = vec(10, 10)
-c = vec_add(a, b)
-print(c)
