@@ -3,30 +3,31 @@ import time
 import math
 import random
 
-gl.init_window('My game', 1500, 600)
+gl.init_window('My game', 1radius0, 600)
 
 t = 0
 ballx = 400
 bally = 300
+radius = radius
 velx = random.randrange(-10, 10)
 vely = random.randrange(-10, 10)
 while True:
     gl.clear_screen()
     gl.current_color(0, 0, 0)
-    gl.disc(ballx, bally, 50)
+    gl.disc(ballx, bally, radius)
     ballx += velx
     bally += vely
 
-    if bally + 50> 600:
+    if bally + radius> 600:
         vely = -vely
 
-    if bally - 50 < 0:
+    if bally - radius < 0:
         vely = -vely
 
-    if ballx + 50> 1500:
+    if ballx + radius> 150:
         velx = -velx
 
-    if ballx - 50 < 0:
+    if ballx - radius < 0:
         velx = -velx
 
     gl.refresh()
