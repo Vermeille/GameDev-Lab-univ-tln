@@ -66,7 +66,7 @@ def balls_collisions(balls):
             b1.pos = vec.add(b1.pos, vec.scale(n, penetration / 2 + 1))
             b2.pos = vec.add(b2.pos, vec.scale(n, -penetration / 2 - 1))
 
-            j = vec.dot(vec.sub(b2.speed, b1.speed), n) / 1
+            j = vec.dot(vec.sub(b2.speed, b1.speed), n)
             b1.speed = vec.add(b1.speed, vec.scale(n, j))
             b2.speed = vec.add(b2.speed, vec.scale(n, -j))
 

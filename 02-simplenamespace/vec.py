@@ -8,26 +8,31 @@ def vec(x, y):
     return u
 
 
-def vec_add(u, v):
+def add(u, v):
     return vec(u.x + v.x, u.y + v.y)
 
 
-def vec_sub(u, v):
+def sub(u, v):
     return vec(u.x - v.x, u.y - v.y)
 
 
-def vec_scale(u, s):
+def scale(u, s):
     return vec(s * u.x, s * u.y)
 
 
-def vec_dot(u, v):
+def dot(u, v):
     return u.x * v.x + u.y * v.y
 
 
-def vec_sqlen(u):
+def sqlen(u):
     return u.x * u.x + u.y * u.y
 
 
-def vec_len(u):
-    return vec_sqlen(u) ** 0.5
+def unit(u):
+    l = len(u)
+    return vec(u.x / l, u.y / l)
+
+
+def len(u):
+    return sqlen(u) ** 0.5
 
