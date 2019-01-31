@@ -1,5 +1,6 @@
 import pygame
 import time
+import math
 
 pygame.init()
 
@@ -8,6 +9,7 @@ H = 600
 screen = pygame.display.set_mode((W, H))
 
 x = 400
+t = 0
 while True:
     screen.fill((0, 0, 0))
 
@@ -22,8 +24,9 @@ while True:
     pygame.draw.circle(
             screen,
             (255, 255, 255),
-            (x, 300),
+            (x + 50 * math.sin(t), 300),
             50)
 
     pygame.display.flip()
     time.sleep(1 / 60)
+    t += 1 / 60
